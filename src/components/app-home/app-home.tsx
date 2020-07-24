@@ -56,12 +56,13 @@ export class AppHome {
               <ion-col size="2">
                 <ion-img src={ele.school_logo}></ion-img>
               </ion-col>
-              <ion-col size="8">
+              <ion-col size="8" class="padding_horizontal">
                 <h3>{ele.school_name}</h3>
                 <h4>{ele.school_address}</h4>
+                <h4>{ele.school_pin}</h4>
               </ion-col>
               <ion-col size="2">
-                <ion-button onClick={()=>this.apply(ele.id)}>Apply</ion-button>
+                <ion-button class="view_applicant" onClick={()=>this.apply(ele.id)}>Apply</ion-button>
               </ion-col>
             </ion-row>
           </ion-card>

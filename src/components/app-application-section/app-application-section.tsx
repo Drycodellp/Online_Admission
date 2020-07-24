@@ -273,7 +273,7 @@ export class AppApplicationSection {
     return [
       <ion-content>
         <div class="header_sec">
-        <ion-img src="assets/icon/logo.png"></ion-img>
+          <ion-img src="assets/icon/logo.png"></ion-img>
           
           <h1>{this.student_name}</h1>
           <ion-button class="log_out" onClick={()=>this.logout()} color="secondary">Log Out</ion-button>
@@ -286,12 +286,8 @@ export class AppApplicationSection {
         </div>
 
         <ion-card class="main_body">
-          <div>
-            <h1>SELECT SUBJECTS</h1>
-          </div>
-          
           <ion-grid class="sub_sel">
-            <h3>Subject Selection</h3>
+            <h3>Select Subjects</h3>
             <ion-row>
               <ion-col size="3">
                 <h4>First Language</h4>
@@ -558,7 +554,7 @@ export class AppApplicationSection {
             
           </ion-grid>
 
-          <ion-button expand="full" onClick={() => this.applyForTheSchool()}>Register</ion-button>
+          <ion-button expand="full" onClick={() => this.applyForTheSchool()}>Send Application</ion-button>
 
         </ion-card>
       </ion-content>

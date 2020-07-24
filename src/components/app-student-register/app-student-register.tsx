@@ -821,7 +821,7 @@ export class AppStudentRegister {
                   </ion-item>
     
                   <ion-item>
-                    <ion-label position="stacked">School Disev ID</ion-label>
+                    <ion-label position="stacked">School Dise ID</ion-label>
                     <ion-input
                       onInput={ev => this.changeValue(ev)}
                       name="school_dise_id"
