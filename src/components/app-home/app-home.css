@@ -1,0 +1,20 @@
+.main_body {
+    padding: 12px;
+}
+
+.main_body div {
+    text-align: center;
+}
+
+.main_body div h1 {
+    margin: 0;
+}
+
+.main_body ion-card {
+    box-shadow: 0px 0px 10px grey;
+}
+
+.main_body ion-card ion-img {
+    width: 80px;
+    height: 80px;
+}

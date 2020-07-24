@@ -1,0 +1,13 @@
+#result_img,
+#cast_cert_img,
+#student_img {
+    display: none;
+}
+
+#reg_form {
+    display: none;
+}
+
+ion-grid h3 {
+    margin: 0;
+}
