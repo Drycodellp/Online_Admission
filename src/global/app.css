@@ -1,0 +1,106 @@
+/* Document Level Styles */
+
+
+/*
+  The imports below are needed to include our light dom css for global styles such as fonts and colors.
+  You can comment out any of these imports if you do not need that css. For example, if you have your own
+  global font family css then you can comment out the typography.css import.
+*/
+
+
+/** Core CSS required for ionic components to work property */
+
+@import "~@ionic/core/css/core.css";
+
+/** Basic CSS for apps built with Ionic */
+
+@import "~@ionic/core/css/normalize.css";
+@import "~@ionic/core/css/structure.css";
+@import "~@ionic/core/css/typography.css";
+
+/** Optional CSS utils that can be commented out */
+
+@import "~@ionic/core/css/padding.css";
+@import "~@ionic/core/css/float-elements.css";
+@import "~@ionic/core/css/text-alignment.css";
+@import "~@ionic/core/css/text-transformation.css";
+@import "~@ionic/core/css/flex-utils.css";
+
+/*
+  The CSS Variables below can be used to theme your app.
+  For more info on CSS variables check out:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+
+  More info about color theming using Ionic:
+  https://ionicframework.com/docs/theming/color-generator
+*/
+
+ion-content {
+    --background: #eee;
+}
+
+.header_sec {
+    background-color: #3880ff;
+    padding: 0px 50px;
+}
+
+.header_sec ion-img {
+    width: 30%;
+}
+
+.header_sec ion-button {
+    position: absolute;
+    top: 42px;
+    right: 50px;
+}
+
+.header_sec h1 {
+    position: absolute;
+    top: 13px;
+    right: 165px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header_sec .log_out {
+    position: absolute;
+    top: 66px;
+    right: 165px;
+}
+
+.header_sec .sch_logo {
+    position: absolute;
+    top: 18px;
+    right: 50px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+
+.search_sec {
+    text-align: center;
+    padding: 45px 0 150px 0;
+}
+
+.search_sec ion-searchbar {
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.search_sec h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.main_body {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: -70px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px grey;
+}
