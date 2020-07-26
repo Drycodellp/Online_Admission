@@ -205,7 +205,7 @@ export class AppSchoolRegister {
 
   async studentLogin(){
     if(this.s_id && this.s_pass){
-      let response = await fetch("http://104.43.21.203:1337/students?s_reg_number="+this.s_id);
+      let response = await fetch("http://localhost:1337/students?s_reg_number="+this.s_id);
       let json = await response.json();
       //console.log('response00',json);
       if(json && json.length>0){
@@ -231,7 +231,7 @@ export class AppSchoolRegister {
       && this.s_history_no && this.s_geography_no && this.s_op_sub_no && this.s_result_img
       && this.s_cast_cert_img && this.s_image){
         if(this.s_password == this.s_con_password){
-          let checkingResponse = await fetch("http://104.43.21.203:1337/students?s_reg_number="+this.s_reg_number);
+          let checkingResponse = await fetch("http://localhost:1337/students?s_reg_number="+this.s_reg_number);
           let jsonRes = await checkingResponse.json();
           if(jsonRes && jsonRes.length == 0){
             let postData = {
@@ -260,7 +260,7 @@ export class AppSchoolRegister {
               "s_cast_cert_img": this.s_cast_cert_img,
               "s_image": this.s_image
             }
-            let response = await fetch("http://104.43.21.203:1337/students", {
+            let response = await fetch("http://localhost:1337/students", {
               method: 'POST',
               body: JSON.stringify(postData),
               headers: {

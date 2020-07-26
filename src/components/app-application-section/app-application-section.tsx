@@ -40,7 +40,7 @@ export class AppApplicationSection {
     async componentWillLoad(){
       this.id = new URL(window.location.href).searchParams.get("id");
       //console.log(this.id)
-      let res = await fetch("http://104.43.21.203:1337/teachers/"+this.id);
+      let res = await fetch("http://localhost:1337/teachers/"+this.id);
       this.schoolDetails = await res.json();
       this.resValue = this.schoolDetails.school_available_subject;
       console.log(this.resValue);
@@ -429,7 +429,7 @@ export class AppApplicationSection {
         "stream": stm,
         "subjects": sub
       }
-      let checkingResponse = await fetch("http://104.43.21.203:1337/applicants", {
+      let checkingResponse = await fetch("http://localhost:1337/applicants", {
         method: 'POST',
         body: JSON.stringify(postData),
         headers: {

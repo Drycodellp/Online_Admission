@@ -14,11 +14,11 @@ export class AppApplicantDetails {
 
     async componentWillLoad(){
       let id = new URL(window.location.href).searchParams.get("id");
-      let res = await fetch("http://104.43.21.203:1337/students?id="+id);
+      let res = await fetch("http://localhost:1337/students?id="+id);
       this.applicant = await res.json();
 
       let aid = new URL(window.location.href).searchParams.get("aid");
-      let res2 = await fetch("http://104.43.21.203:1337/applicants?id="+aid);
+      let res2 = await fetch("http://localhost:1337/applicants?id="+aid);
       this.application = await res2.json();
 
       //console.log(this.applicant, this.application[0].subjects.first_language);

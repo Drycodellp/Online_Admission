@@ -40,3 +40,12 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+ion-segment {
+    background-color: gainsboro;
+    margin-top: 18px;
+}
+
+ion-segment ion-label {
+    font-size: 20px;
+}

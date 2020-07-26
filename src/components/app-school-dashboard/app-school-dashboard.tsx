@@ -10,6 +10,9 @@ export class AppSchoolDashboard {
   @State() applications;
   public school_name;
   public logo;
+  public scienceApplications = [];
+  public commerceAppliocation = [];
+  public artsApplication = [];
 
   async componentWillLoad(){
     let data = window.localStorage.getItem('user_details');
@@ -17,9 +20,20 @@ export class AppSchoolDashboard {
     let s_id = parseData[0].id;
     this.school_name = parseData[0].school_name;
     this.logo = parseData[0].school_logo;
-    let res = await fetch("http://104.43.21.203:1337/applicants?school_id="+s_id);
-    this.applications = await res.json();
-    console.log(parseData);
+    let res = await fetch("http://localhost:1337/applicants?school_id="+s_id);
+    let app = await res.json();
+
+    for(var i=0; i<app.length; i++){
+      let ele = app[i];
+      if(ele.stream == 'science'){
+        this.scienceApplications.push(ele);
+      }else if(ele.stream == 'commerce'){
+        this.commerceAppliocation.push(ele);
+      }else if(ele.stream == 'arts'){
+        this.artsApplication.push(ele);
+      }
+    }
+    this.applications = this.scienceApplications;
   }
 
   logout(){
@@ -29,6 +43,16 @@ export class AppSchoolDashboard {
 
   viewApplicant(id, aid){
     window.location.assign('/applicant-details?id='+id+'&aid='+aid);
+  }
+
+  streamFilter(e){
+    if(e.target.value == 'science'){
+      this.applications = this.scienceApplications;
+    }else if(e.target.value == 'commerce'){
+      this.applications = this.commerceAppliocation;
+    }else if(e.target.value == 'arts'){
+      this.applications = this.artsApplication;
+    }
   }
 
   render() {
@@ -51,6 +75,18 @@ export class AppSchoolDashboard {
           <div>
             <h1>Applications</h1>
           </div>
+          <ion-segment onIonChange={ev => this.streamFilter(ev)} value="science">
+            <ion-segment-button value="science">
+              <ion-label>SCIENCE</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="commerce">
+              <ion-label>COMMERCE</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="arts">
+              <ion-label>ARTS</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
           {this.applications.map((ele) => 
           <ion-card>
             <ion-row>
