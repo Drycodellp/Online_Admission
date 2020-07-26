@@ -17,7 +17,7 @@ export class AppSchoolDashboard {
     let s_id = parseData[0].id;
     this.school_name = parseData[0].school_name;
     this.logo = parseData[0].school_logo;
-    let res = await fetch("http://localhost:1337/applicants?school_id="+s_id);
+    let res = await fetch("http://104.43.21.203:1337/applicants?school_id="+s_id);
     this.applications = await res.json();
     console.log(parseData);
   }

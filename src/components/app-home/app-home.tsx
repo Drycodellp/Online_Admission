@@ -11,7 +11,7 @@ export class AppHome {
   public logo;
 
   async componentWillLoad(){
-    let res = await fetch("http://localhost:1337/teachers");
+    let res = await fetch("http://104.43.21.203:1337/teachers");
     this.schools = await res.json();
     console.log(this.schools);
 

@@ -40,7 +40,7 @@ export class AppApplicationSection {
     async componentWillLoad(){
       this.id = new URL(window.location.href).searchParams.get("id");
       //console.log(this.id)
-      let res = await fetch("http://localhost:1337/teachers/"+this.id);
+      let res = await fetch("http://104.43.21.203:1337/teachers/"+this.id);
       this.schoolDetails = await res.json();
       this.resValue = this.schoolDetails.school_available_subject;
       console.log(this.resValue);
@@ -51,8 +51,7 @@ export class AppApplicationSection {
     this.logo = parseData[0].s_image;
     }
 
-    selSub(sec, val){
-      //console.log(sec, val);
+    selSub(e, sec, val){
       switch (sec) {
         case "firstLang": {
           this.firstLang = val;
@@ -63,80 +62,253 @@ export class AppApplicationSection {
           break;
         }
         case "science1": {
-          this.set1row1 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row1 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row1 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "science2": {
-          this.set1row2 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row2 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row2 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "science3": {
-          this.set1row3 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row3 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row3 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "science4": {
-          this.set1row4 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row4 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row4 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "science5": {
-          this.set1row5 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row5 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row5 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "science6": {
-          this.set1row6 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set1row6 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set1row6 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce1": {
-          this.set2row1 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row1 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row1 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce2": {
-          this.set2row2 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row2 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row2 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce3": {
-          this.set2row3 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row3 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row3 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce4": {
-          this.set2row4 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row4 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row4 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce5": {
-          this.set2row5 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row5 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row5 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "commerce6": {
-          this.set2row6 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set2row6 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set2row6 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts1": {
-          this.set3row1 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row1 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row1 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts2": {
-          this.set3row2 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row2 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row2 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts3": {
-          this.set3row3 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row3 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row3 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts4": {
-          this.set3row4 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row4 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row4 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts5": {
-          this.set3row5 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row5 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row5 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts6": {
-          this.set3row6 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            e.target.classList.add("radio-checked");
+            this.set3row6 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            e.target.classList.remove("radio-checked");
+            this.set3row6 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
         case "arts7": {
-          this.set3row7 = val;
-          break;
+          if(e.target.ariaChecked == 'false'){
+            // console.log('1', e.target, e.target.ariaChecked);
+            e.target.classList.add("radio-checked");
+            this.set3row7 = val;
+            e.target.ariaChecked = 'true';
+            break;
+          }else if(e.target.ariaChecked == 'true'){
+            // console.log('2', e.target, e.target.ariaChecked);
+            e.target.classList.remove("radio-checked");
+            this.set3row7 = '';
+            e.target.ariaChecked = 'false';
+            break;
+          }
         }
       }
     }
@@ -198,30 +370,47 @@ export class AppApplicationSection {
         }
       } */
 
-      if(this.id && s_id && this.streams.length > 0){
+      if(this.id && s_id && this.streams.length > 0 && this.firstLang && this.secLang){
         for(var i=0; i<this.streams.length; i++){
           let stream = this.streams[i];
           if(stream == 'science'){
-            let subject = {
-              "first_language": this.firstLang,
-              "second_language": this.secLang,
-              "others": (" "+this.set1row1+" "+this.set1row2+" "+this.set1row3+" "+this.set1row4+" "+this.set1row5+" "+this.set1row6).replace(/ undefined/gi,'')
+            let count:number = 0;
+            if(this.set1row1){count+=1;} if(this.set1row2){count+=1;} if(this.set1row3){count+=1;} if(this.set1row4){count+=1;} if(this.set1row5){count+=1;} if(this.set1row6){count+=1;}
+
+            if(count == 4){
+              let subject = {
+                "first_language": this.firstLang,
+                "second_language": this.secLang,
+                "others": (" "+this.set1row1+" "+this.set1row2+" "+this.set1row3+" "+this.set1row4+" "+this.set1row5+" "+this.set1row6).replace(/ undefined/gi,'')
+              }
+              this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
+            }else{
+              this.presentToast('You have to chose 4 subjects');
             }
-            this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
           }else if(stream == 'commerce'){
-            let subject = {
-              "first_language": this.firstLang,
-              "second_language": this.secLang,
-              "others": (" "+this.set2row1+" "+this.set2row2+" "+this.set2row3+" "+this.set2row4+" "+this.set2row5+" "+this.set2row6).replace(/ undefined/gi,'')
+            let count:number = 0;
+            if(this.set2row1){count+=1;} if(this.set2row2){count+=1;} if(this.set2row3){count+=1;} if(this.set2row4){count+=1;} if(this.set2row5){count+=1;} if(this.set2row6){count+=1;}
+
+            if(count == 4){
+              let subject = {
+                "first_language": this.firstLang,
+                "second_language": this.secLang,
+                "others": (" "+this.set2row1+" "+this.set2row2+" "+this.set2row3+" "+this.set2row4+" "+this.set2row5+" "+this.set2row6).replace(/ undefined/gi,'')
+              }
+              this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
             }
-            this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
           }else if(stream == 'arts'){
-            let subject = {
-              "first_language": this.firstLang,
-              "second_language": this.secLang,
-              "others": (" "+this.set3row1+" "+this.set3row2+" "+this.set3row3+" "+this.set3row4+" "+this.set3row5+" "+this.set3row6+" "+this.set3row7).replace(/ undefined/gi,'')
+            let count:number = 0;
+            if(this.set3row1){count+=1;} if(this.set3row2){count+=1;} if(this.set3row3){count+=1;} if(this.set3row4){count+=1;} if(this.set3row5){count+=1;} if(this.set3row6){count+=1;} if(this.set3row7){count+=1;}
+
+            if(count == 4){
+              let subject = {
+                "first_language": this.firstLang,
+                "second_language": this.secLang,
+                "others": (" "+this.set3row1+" "+this.set3row2+" "+this.set3row3+" "+this.set3row4+" "+this.set3row5+" "+this.set3row6+" "+this.set3row7).replace(/ undefined/gi,'')
+              }
+              this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
             }
-            this.sendRequest(subject, s_id, s_name, s_school, s_total, s_persent, stream);
           }
         }
       }else{
@@ -240,7 +429,7 @@ export class AppApplicationSection {
         "stream": stm,
         "subjects": sub
       }
-      let checkingResponse = await fetch("http://localhost:1337/applicants", {
+      let checkingResponse = await fetch("http://104.43.21.203:1337/applicants", {
         method: 'POST',
         body: JSON.stringify(postData),
         headers: {
@@ -296,7 +485,7 @@ export class AppApplicationSection {
               <ion-radio-group>
               {this.resValue.first_language.map((val) => 
                 <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('firstLang', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'firstLang', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                 </div>
               )}
@@ -311,7 +500,7 @@ export class AppApplicationSection {
               <ion-radio-group>
               {this.resValue.second_language.map((val) => 
                 <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('secLang', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'secLang', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                 </div>
               )}
@@ -348,7 +537,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row1.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science1', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science1', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -358,7 +547,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row2.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science2', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science2', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -369,7 +558,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row3.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science3', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science3', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -379,7 +568,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row4.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science4', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science4', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -389,7 +578,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row5.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science5', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science5', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -399,7 +588,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set1.row6.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('science6', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'science6', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -416,7 +605,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row1.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce1', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce1', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -426,7 +615,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row2.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce2', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce2', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -436,7 +625,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row3.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce3', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce3', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -446,7 +635,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row4.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce4', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce4', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -456,7 +645,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row5.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce5', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce5', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -466,7 +655,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set2.row6.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('commerce6', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'commerce6', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -483,7 +672,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row1.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts1', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts1', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -493,7 +682,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row2.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts2', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts2', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -503,7 +692,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row3.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts3', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts3', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -513,7 +702,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row4.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts4', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts4', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -523,7 +712,7 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row5.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts5', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts5', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
@@ -533,17 +722,17 @@ export class AppApplicationSection {
                 <ion-radio-group>
                 {this.resValue.set3.row6.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts6', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts6', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}
                 </ion-radio-group>
                 </ion-row>
                 <ion-row>
-                <ion-radio-group>
+                <ion-radio-group id="arts7">
                 {this.resValue.set3.row7.map((val) => 
                   <div>
-                  <ion-radio slot="start" onClick={()=>this.selSub('arts7', val)}></ion-radio>
+                  <ion-radio slot="start" onClick={ev=>this.selSub(ev, 'arts7', val)}></ion-radio>
                   <ion-label>{val}</ion-label>
                   </div>
                 )}

@@ -21,3 +21,17 @@ ion-img {
     margin: 0;
     margin-right: 3px;
 }
+
+ion-radio-group {
+    display: inline-flex;
+}
+
+ion-radio-group div {
+    margin: 4px;
+}
+
+ion-radio-group ion-label,
+.select_stream ion-label {
+    font-size: 17px;
+    margin-left: 3px;
+}

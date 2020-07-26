@@ -17,5 +17,8 @@
   "devDependencies": {
     "@ionic/core": "^5.0.7",
     "@stencil/core": "1.17.0"
+  },
+  "dependencies": {
+    "@angular/cli": "^10.0.4"
   }
 }
