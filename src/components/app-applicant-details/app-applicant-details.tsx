@@ -151,10 +151,10 @@ export class AppApplicantDetails {
               </ion-col>
               <ion-col>
                 <ion-img src={this.applicant[0].s_cast_cert_img}></ion-img>
-                <div>
+                {/* <div>
                   <ion-button size="small">Download</ion-button>
                   <ion-button size="small">Print</ion-button>
-                </div>
+                </div> */}
               </ion-col>
             </ion-row>
 

@@ -44,7 +44,7 @@ const AppStudentRegister = class {
         this.set3row7 = [];
     }
     async componentWillLoad() {
-        let res = await fetch("https://schoolplusonline.in/assets/subjects.json");
+        let res = await fetch("http://localhost:3333/assets/subjects.json");
         this.resValue = await res.json();
         //console.log(this.resValue);
     }

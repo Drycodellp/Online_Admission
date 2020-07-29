@@ -49,3 +49,34 @@ ion-segment {
 ion-segment ion-label {
     font-size: 20px;
 }
+
+.merit_list_filter {
+    border-bottom: 1px solid gray;
+}
+
+.filter_button {
+    cursor: pointer;
+}
+
+.merit_list_filter h4 {
+    font-weight: 900;
+}
+
+.merit_list_filter ion-icon {
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+#merit_filter {
+    display: none;
+}
+
+.all_subs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all_subs ion-checkbox {
+    width: 15px;
+    height: 15px;
+}

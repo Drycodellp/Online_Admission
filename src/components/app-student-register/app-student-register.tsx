@@ -9,7 +9,7 @@ export class AppStudentRegister {
   @State() resValue;
 
   async componentWillLoad(){
-    let res = await fetch("https://schoolplusonline.in/assets/subjects.json");
+    let res = await fetch("http://localhost:3333/assets/subjects.json");
     this.resValue = await res.json();
     //console.log(this.resValue);
   }
@@ -185,7 +185,7 @@ export class AppStudentRegister {
     }
   }
 
-  selSub(sec, e,val){
+  selSub(sec, e, val){
     //console.log(sec, e.target.checked, val)
     switch (sec) {
       case "firstLang": {
